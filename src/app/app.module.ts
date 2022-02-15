@@ -1,16 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { Store } from 'store';
+
+// feature modules
+import { AuthModule1 } from '../auth/auth.module';
+
+
+import { AppComponent } from './containers/app/app.component';
+
+
+
+export const ROUTES: Routes = [
+]
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AuthModule1,
+    RouterModule.forRoot(ROUTES),
   ],
-  providers: [],
+  providers: [
+    Store
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
